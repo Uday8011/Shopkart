@@ -20,13 +20,9 @@ function App() {
       {/* Pages */}
       <Routes>
         <Route path="/" element={<Home />} />
-
         <Route path="/Cart" element={<Cart />} />
-
         <Route path="/Product" element={<Product />} />
-
         <Route path="/Login" element={<Login />} />
-
         <Route path="/Register" element={<Register />} />
       </Routes>
 

@@ -130,11 +130,7 @@ function Login() {
               </label>
             </div>
 
-            <a
-              href="#"
-              className="text-decoration-none"
-              onClick={(e) => e.preventDefault()}
-            >
+            <a href="#" className="text-decoration-none" onClick={(e) => e.preventDefault()}>
               Forgot Password?
             </a>
 
