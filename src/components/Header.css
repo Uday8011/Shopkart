@@ -1,0 +1,303 @@
+:root {
+  --island-brand-accent: #0066ff;
+  --bezier-elastic: cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.island-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 90px;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  transition: all 0.3s var(--bezier-elastic);
+  padding: 0 40px;
+}
+
+/* --- LIGHT MODE HEADER --- */
+.island-header.theme-light {
+  background-color: rgba(246, 248, 250, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+}
+
+.island-header.theme-light .island-brand {
+  color: #0f172a;
+}
+
+.island-header.theme-light .nav-search-form {
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.island-header.theme-light .nav-search-input {
+  color: #1e293b;
+}
+
+.island-header.theme-light .nav-search-input::placeholder,
+.island-header.theme-light .nav-search-submit-btn {
+  color: #64748b;
+}
+
+.island-header.theme-light .island-pill-pod {
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+}
+
+.island-header.theme-light .island-anchor {
+  color: #475569;
+}
+
+.island-header.theme-light .island-anchor:hover {
+  color: #0f172a;
+}
+
+/* --- DARK MODE HEADER --- */
+.island-header.theme-dark {
+  background-color: rgba(11, 15, 25, 0.85);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.island-header.theme-dark .island-brand {
+  color: #f8fafc;
+}
+
+.island-header.theme-dark .nav-search-form {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.island-header.theme-dark .nav-search-form:focus-within {
+  background: #111827;
+  border-color: var(--island-brand-accent);
+}
+
+.island-header.theme-dark .nav-search-input {
+  color: #f8fafc;
+}
+
+.island-header.theme-dark .nav-search-input::placeholder,
+.island-header.theme-dark .nav-search-submit-btn {
+  color: #94a3b8;
+}
+
+.island-header.theme-dark .island-pill-pod {
+  background: #161f30;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+.island-header.theme-dark .island-anchor {
+  color: #cbd5e1;
+}
+
+.island-header.theme-dark .island-anchor:hover {
+  color: #ffffff;
+}
+
+/* Scrolled state */
+.island-header.header-scrolled {
+  height: 75px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* Layout Grid */
+.header-island-shell {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  align-items: center;
+}
+
+.island-brand {
+  font-size: 22px;
+  font-weight: 800;
+  text-decoration: none;
+  letter-spacing: -0.5px;
+  text-transform: uppercase;
+  justify-self: start;
+}
+
+.island-brand span {
+  color: var(--island-brand-accent);
+}
+
+/* Center Search Capsule */
+.nav-search-center-wrapper {
+  width: 100%;
+  max-width: 440px;
+  justify-self: center;
+}
+
+.nav-search-form {
+  position: relative;
+  border-radius: 30px;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  transition: all 0.25s ease;
+}
+
+.nav-search-input {
+  width: 100%;
+  background: transparent;
+  border: none;
+  outline: none;
+  padding: 7px 16px 7px 40px;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.nav-search-submit-btn {
+  position: absolute;
+  left: 14px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.search-icon-vector {
+  width: 16px;
+  height: 16px;
+}
+
+/* Right Nav Pod */
+.island-nav-rail {
+  justify-self: end;
+}
+
+.island-pill-pod {
+  position: relative;
+  padding: 4px 8px;
+  border-radius: 40px;
+  display: flex;
+  align-items: center;
+}
+
+.island-nodes-track {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 4px;
+}
+
+.island-anchor {
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+  padding: 8px 14px;
+  border-radius: 20px;
+  display: inline-flex;
+  align-items: center;
+  transition: all 0.2s ease;
+}
+
+.island-anchor.state-active {
+  color: var(--island-brand-accent) !important;
+}
+
+.state-cta {
+  background-color: #0f172a;
+  color: #ffffff !important;
+  border-radius: 20px;
+}
+
+.island-header.theme-dark .state-cta {
+  background-color: #2563eb;
+  color: #ffffff !important;
+}
+
+.island-badge-counter {
+  background-color: var(--island-brand-accent);
+  color: #ffffff;
+  font-size: 10px;
+  font-weight: 700;
+  padding: 2px 6px;
+  border-radius: 10px;
+  margin-left: 5px;
+}
+
+/* ==========================================================================
+   CIRCULAR STACKED THEME TOGGLE BUTTON
+   ========================================================================== */
+.theme-toggle-node-btn {
+  background: #ffffff;
+  border: 3px solid #fecdd3; /* Soft rose border matching screenshot */
+  border-radius: 50%;
+  width: 52px;
+  height: 52px;
+  padding: 0;
+  margin-left: 6px;
+  cursor: pointer;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.theme-toggle-node-btn .toggle-icon {
+  font-size: 15px;
+  line-height: 1;
+}
+
+.theme-toggle-node-btn .toggle-label {
+  font-size: 10px;
+  font-weight: 600;
+  color: #1e293b;
+  line-height: 1.1;
+  margin-top: 1px;
+}
+
+.theme-toggle-node-btn:hover {
+  transform: scale(1.05);
+  border-color: #fda4af;
+}
+
+/* Dark mode styling for circular button */
+.island-header.theme-dark .theme-toggle-node-btn {
+  background: #0f172a;
+  border-color: #475569;
+}
+
+.island-header.theme-dark .theme-toggle-node-btn .toggle-label {
+  color: #f8fafc;
+}
+
+.island-header.theme-dark .theme-toggle-node-btn:hover {
+  border-color: #94a3b8;
+}
+
+/* Mobile Burger */
+.island-burger {
+  display: none;
+}
+
+@media (max-width: 1024px) {
+  .header-island-shell {
+    grid-template-columns: 1fr auto;
+  }
+  .nav-search-center-wrapper {
+    display: none;
+  }
+  .island-burger {
+    display: block;
+    background: transparent;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+  }
+}

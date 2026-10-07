@@ -1,29 +1,23 @@
-function ProductCard({ title, image, price }) {
+import React from "react";
+import "./ProductCard.css";
+
+function ProductCard({ id, image, title, price, onAddToCart }) {
   return (
-    <div className="card h-100 shadow-sm">
-
+    <div className="product-card">
       <div className="product-image">
-        <img
-          src={image}
-          alt={title}
-          className="card-img-top"
-        />
+        <img src={image} alt={title || "Product item"} loading="lazy" />
       </div>
 
-      <div className="card-body">
-        <h5 className="card-title">
-          {title}
-        </h5>
+      <h3>{title}</h3>
+      <p>₹{Number(price).toLocaleString("en-IN")}</p>
 
-        <p className="card-text fw-bold">
-          ₹{price}
-        </p>
-
-        <button className="btn btn-primary">
-          Add to Cart
-        </button>
-      </div>
-
+      <button 
+        type="button" 
+        className="btn-add" 
+        onClick={() => onAddToCart && onAddToCart({ id, image, title, price })}
+      >
+        Add to Cart
+      </button>
     </div>
   );
 }
